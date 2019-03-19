@@ -12,18 +12,38 @@
 
       </div>
 
+      <br>
 
+      <div style="display: block; padding-top: 15px; padding-left:15px" *ngIf= "chartDatasets">
+        <canvas mdbChart
+            [chartType]="chartType"
+            [datasets]="chartDatasets"
+            [labels]="chartLabels"
+            [colors]="chartColors"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"
+        >
+        </canvas>
+      </div>
+<br>
+
+<div class ="lister">
       <mat-grid-list cols="3" rowHeight="1:1">
           <mat-grid-tile>CASHBACK</mat-grid-tile>
           <mat-grid-tile>POINTS</mat-grid-tile>
           <mat-grid-tile>MILES</mat-grid-tile>
       </mat-grid-list>
 
+</div>
 
           <ul>
               <li *ngFor="let card of creditCardsList.cards">
                 {{card.name}} || {{card.amount_saved}} || {{card.reward_type}}
               </li>
             </ul>
+
+  
 </section>
   

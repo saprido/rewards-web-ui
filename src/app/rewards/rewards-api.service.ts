@@ -21,4 +21,11 @@ export class RewardsApiService {
       .get(`${API_URL}/cards`)
       .catch(RewardsApiService._handleError);
   }
+
+  // GET list of categories, future events
+  getSpending(): Observable<any> {
+          return this.http
+        .get(`${API_URL}/spending`)
+        .catch(RewardsApiService._handleError);
+    }
 }

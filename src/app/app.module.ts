@@ -9,8 +9,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatGridListModule} from '@angular/material/grid-list';
-
-
+// For MDB Angular Free
+import { ChartsModule, WavesModule} from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    ChartsModule,
+    WavesModule,
   ],
   providers: [RewardsApiService],
   bootstrap: [AppComponent]

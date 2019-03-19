@@ -4,3 +4,10 @@ export class CreditCardList{
   ){}
 
 }
+
+export class SpendingList{
+  constructor(
+    public spending: any[],
+  ){}
+
+}
