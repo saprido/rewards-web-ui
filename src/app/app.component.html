@@ -7,13 +7,25 @@
             <h2 style="font-weight: 400;">Upload some transaction history:</h2>
           
             <div>
-                <button mat-raised-button color="primary">Upload CSV</button>
+                <!-- <button mat-raised-button color="primary">Upload CSV</button>
+                 -->
+
+                 <button mat-raised-button (click)="openInput()">
+                    Select File to Upload
+                </button>
+            
+            <input id="fileInput" hidden type="file" name="purchases" (change)="fileChange($event.target.files)" >
+            
+            <button mat-button [disabled]="!ourFile" (click)="upload()">Upload</button>
+
+
               </div>
 
+
+              
+
       </div>
-
       <br>
-
       <div style="display: block; padding-top: 15px; padding-left:15px" *ngIf= "chartDatasets">
         <canvas mdbChart
             [chartType]="chartType"
@@ -29,20 +41,23 @@
       </div>
 <br>
 
-<div class ="lister">
+<!-- <div class ="lister">
       <mat-grid-list cols="3" rowHeight="1:1">
           <mat-grid-tile>CASHBACK</mat-grid-tile>
           <mat-grid-tile>POINTS</mat-grid-tile>
-          <mat-grid-tile>MILES</mat-grid-tile>
+          <mat-grid-tile>
+            <h1> MILES </h1>
+            <p>{{milesCard.name}}</p>
+          </mat-grid-tile>
       </mat-grid-list>
 
-</div>
+</div> -->
 
-          <ul>
+          <!-- <ul>
               <li *ngFor="let card of creditCardsList.cards">
                 {{card.name}} || {{card.amount_saved}} || {{card.reward_type}}
               </li>
-            </ul>
+            </ul> -->
 
   
 </section>
